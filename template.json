@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Tyler Hall",
+  "classifications": [ "Common", "Console", "C#8" ],
+  "identity": "TylerHall.EnhancedConsoleApplication",
+  "name": "Enhanced Console Application",
+  "shortName": "enhancedasyncconsole",
+  "sourceName": "EnhancedConsole.Application",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols":{
+    "copyrightName": {
+      "type": "parameter",
+      "defaultValue": "John Smith",
+      "replaces":"Tyler Hall"
+    },
+    "title": {
+      "type": "parameter",
+      "defaultValue": "My Console Application",
+      "replaces":"Enhanced Console Application"
+    }
+  }
+}
