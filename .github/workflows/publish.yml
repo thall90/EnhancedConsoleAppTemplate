@@ -39,4 +39,4 @@ jobs:
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
 
           # NuGet server uri hosting the packages, defaults to https://api.nuget.org
-          NUGET_SOURCE: https://www.nuget.org/api/v2/package/
+          # NUGET_SOURCE: https://www.nuget.org/api/v2/package/
