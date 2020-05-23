@@ -1,4 +1,4 @@
-![Nuget](https://img.shields.io/nuget/v/TH.Utility.EnhancedConsoleApplicationTemplate?label=NuGet)
+[![Nuget](https://img.shields.io/nuget/v/TH.Utility.EnhancedConsoleApplicationTemplate?label=NuGet)](https://www.nuget.org/packages/TH.Utility.EnhancedConsoleApplicationTemplate/)
 
 # Enhanced Console Application Template
 Console application template with appsettings configuration, dependency injection, and some useful extensions.
