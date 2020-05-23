@@ -1,4 +1,4 @@
-# EnhancedConsoleAppTemplate  ![Nuget](https://img.shields.io/nuget/v/TH.Utility.EnhancedConsoleApplicationTemplate?label=NuGet)
+# EnhancedConsoleAppTemplate                      ![Nuget](https://img.shields.io/nuget/v/TH.Utility.EnhancedConsoleApplicationTemplate?label=NuGet)
 Console application template with appsettings configuration, dependency injection, and some useful extensions.
 
 ## Using this template with the dotnet CLI
