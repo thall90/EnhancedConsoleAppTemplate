@@ -1,12 +1,14 @@
 using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 
 namespace EnhancedConsole.Application.Infrastructure.Extensions
 {
+    [ExcludeFromCodeCoverage]
     internal static class ConsoleExtensions
     {
-        internal static void WriteWithColor(
+        internal static void PrintWithColor(
             string message,
             ConsoleColor color)
         {
@@ -15,51 +17,67 @@ namespace EnhancedConsole.Application.Infrastructure.Extensions
             Console.ResetColor();
         }
 
-        internal static void WriteInfo(
+        internal static void PrintInfo(
             string message,
+            ConsoleColor backGroundColor = default,
+            ConsoleColor foreGroundColor = ConsoleColor.White,
             Type declaringType = null)
         {
-            WriteWithBackground(
+            var backGround = GetCurrentConsoleColorIfDefault(backGroundColor);
+            
+            PrintWithBackground(
                 message,
-                ConsoleColor.Black,
-                ConsoleColor.White,
+                backGround,
+                foreGroundColor,
                 declaringType);
         }
 
-        internal static void WriteWarning(
+        internal static void PrintWarning(
             string message,
+            ConsoleColor backGroundColor = default,
+            ConsoleColor foreGroundColor = ConsoleColor.DarkYellow,
             Type declaringType = null)
         {
-            WriteWithBackground(
+            var backGround = GetCurrentConsoleColorIfDefault(backGroundColor);
+            
+            PrintWithBackground(
                 message,
-                ConsoleColor.Black,
-                ConsoleColor.DarkYellow,
+                backGround,
+                foreGroundColor,
                 declaringType);
         }
 
-        internal static void WriteError(
+        internal static void PrintError(
             string message,
+            ConsoleColor backGroundColor = default,
+            ConsoleColor foreGroundColor = ConsoleColor.DarkRed,
             Type declaringType = null)
         {
-            WriteWithBackground(
+            var backGround = GetCurrentConsoleColorIfDefault(backGroundColor);
+            
+            PrintWithBackground(
                 message,
-                ConsoleColor.Black,
-                ConsoleColor.DarkRed,
+                backGround,
+                foreGroundColor,
                 declaringType);
         }
 
         internal static void WriteSuccess(
             string message,
+            ConsoleColor backGroundColor = default,
+            ConsoleColor foreGroundColor = ConsoleColor.Green,
             Type declaringType = null)
         {
-            WriteWithBackground(
+            var backGround = GetCurrentConsoleColorIfDefault(backGroundColor);
+            
+            PrintWithBackground(
                 message,
-                ConsoleColor.Black,
-                ConsoleColor.Green,
+                backGround,
+                foreGroundColor,
                 declaringType);
         }
 
-        internal static void WriteWithBackground(
+        internal static void PrintWithBackground(
             string message,
             ConsoleColor backGroundColor,
             ConsoleColor foreGroundColor,
@@ -84,7 +102,7 @@ namespace EnhancedConsole.Application.Infrastructure.Extensions
             Console.ForegroundColor = currentText;
         }
 
-        internal static void WriteAfterDelay(
+        internal static void PrintOnSingleLineAfterDelay(
             string message,
             int delay)
         {
@@ -92,30 +110,37 @@ namespace EnhancedConsole.Application.Infrastructure.Extensions
             Console.Write(message);
         }
 
-        internal static void PrintStartMessage(string operation)
+        internal static void PrintStartMessage(
+            string operation,
+            ConsoleColor messageColor = ConsoleColor.Magenta)
         {
-            WriteWithColor(
-                $"Initializing Operations {operation}...\n",
-                ConsoleColor.Magenta);
+            PrintWithColor(
+                $"Initializing {operation}...\n",
+                messageColor);
         }
 
-        internal static void PrintExitMessage(string operation, int exitCode, Stopwatch watch)
+        internal static void PrintExitMessage(
+            string operation, 
+            int exitCode,
+            Stopwatch watch,
+            ConsoleColor successColor = ConsoleColor.DarkGreen,
+            ConsoleColor failureColor = ConsoleColor.DarkRed )
         {
             var elapsedMinutes = watch.Elapsed.Minutes;
             var elapsedSeconds = watch.Elapsed.Seconds;
 
             if (exitCode != -1)
             {
-                WriteWithColor(
+                PrintWithColor(
                     $"\n{operation} Completed In: {elapsedMinutes}:{elapsedSeconds}.",
-                    ConsoleColor.DarkGreen);
+                    successColor);
             }
 
             if (exitCode == -1)
             {
-                WriteWithColor(
+                PrintWithColor(
                     $"\n{operation} Failed After: {elapsedMinutes}:{elapsedSeconds}.",
-                    ConsoleColor.DarkRed);
+                    failureColor);
             }
 
 #if DEBUG
@@ -125,6 +150,14 @@ namespace EnhancedConsole.Application.Infrastructure.Extensions
                 Console.ReadKey();
             }
 #endif
+        }
+
+        private static ConsoleColor GetCurrentConsoleColorIfDefault(
+            ConsoleColor input,
+            bool isBackground = false)
+        {
+            var currentConsoleColor = isBackground ? Console.BackgroundColor : Console.ForegroundColor;
+            return input == default ? currentConsoleColor : input;
         }
     }
 }

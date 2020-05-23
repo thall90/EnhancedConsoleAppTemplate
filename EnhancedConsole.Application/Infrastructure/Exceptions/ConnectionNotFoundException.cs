@@ -1,7 +1,9 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace EnhancedConsole.Application.Infrastructure.Exceptions
 {
+    [ExcludeFromCodeCoverage]
     public class ConnectionNotFoundException : Exception
     {
         public ConnectionNotFoundException(string connectionName)

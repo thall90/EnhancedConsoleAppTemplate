@@ -1,7 +1,9 @@
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace EnhancedConsole.Application.Infrastructure.DependencyInjection
 {
+    [ExcludeFromCodeCoverage]
     public static class MyRegistrationExtensions
     {
         public static IServiceCollection RegisterMyDependencies(this IServiceCollection services)

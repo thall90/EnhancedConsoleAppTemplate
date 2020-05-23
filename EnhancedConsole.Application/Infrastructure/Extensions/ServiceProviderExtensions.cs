@@ -1,5 +1,6 @@
 using System;
 using System.Data.SqlClient;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using EnhancedConsole.Application.Infrastructure.Constants;
 using EnhancedConsole.Application.Infrastructure.Exceptions;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace EnhancedConsole.Application.Infrastructure.Extensions
 {
+    [ExcludeFromCodeCoverage]
     public static class ServiceProviderExtensions
     {
         public static async Task<SqlConnection> GetSqlConnectionFromConfig(

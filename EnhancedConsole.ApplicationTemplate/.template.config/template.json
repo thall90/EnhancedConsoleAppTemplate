@@ -5,7 +5,7 @@
   "identity": "TylerHall.EnhancedConsoleApplication",
   "name": "Enhanced Console Application",
   "shortName": "enhancedasyncconsole",
-  "sourceName": "EnhancedConsole.Application",
+  "sourceName": "EnhancedConsole.ApplicationTemplate",
   "tags": {
     "language": "C#",
     "type": "project"

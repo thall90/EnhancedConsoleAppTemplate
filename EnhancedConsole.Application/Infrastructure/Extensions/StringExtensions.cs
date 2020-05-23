@@ -1,9 +1,11 @@
 using System;
 using System.Data.SqlClient;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 
 namespace EnhancedConsole.Application.Infrastructure.Extensions
 {
+    [ExcludeFromCodeCoverage]
     public static class StringExtensions
     {
         internal static Task<SqlConnection> GetConnection(this string connectionString)

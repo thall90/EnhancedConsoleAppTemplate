@@ -35,7 +35,7 @@ namespace EnhancedConsole.Application
             }
             catch (Exception e)
             {
-                ConsoleExtensions.WriteWithColor($"\n {e} \n", ConsoleColor.DarkRed);
+                ConsoleExtensions.PrintError($"\n {e} \n");
                 exitCode = -1;
             }
             finally
