@@ -7,16 +7,20 @@
 
     <IsPackable>true</IsPackable>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.0</PackageVersion>
-    <PackageId>TylerHall.Utility.EnhancedConsoleApplicationTemplate</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <PackageId>TH.Utility.EnhancedConsoleApplicationTemplate</PackageId>
     <Title>Enhanced Console Application Template</Title>
     <Authors>Me</Authors>
-    <Description>Console application template with appsettings configuration, dependency injection, and some useful extensions.</Description>
-    <PackageTags>dotnet-new;templates;contoso</PackageTags>
+    <Description>.NET Core 3.1 Console application template with appsettings configuration, dependency injection, and some useful extensions.</Description>
+    <PackageTags>dotnet-new;templates;tyler hall</PackageTags>
+    <PackageLicenseUrl>https://github.com/thall90/EnhancedConsoleAppTemplate/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/thall90/EnhancedConsoleAppTemplate</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Copyright>Copyright 2020: Tyler Hall. All rights reserved.</Copyright>
+    
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>
-    <RootNamespace>EnhancedConsole.Application</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
