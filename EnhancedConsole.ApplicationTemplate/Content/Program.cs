@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using EnhancedConsole.ApplicationTemplate.Infrastructure.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+#pragma warning disable 1998
 
 namespace EnhancedConsole.ApplicationTemplate
 {
