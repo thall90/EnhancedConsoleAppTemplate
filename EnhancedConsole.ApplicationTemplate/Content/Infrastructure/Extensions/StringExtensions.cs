@@ -2,6 +2,7 @@ using System;
 using System.Data.SqlClient;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using EnhancedConsole.ApplicationTemplate.Infrastructure.Exceptions;
 
 namespace EnhancedConsole.ApplicationTemplate.Infrastructure.Extensions
 {
@@ -16,7 +17,7 @@ namespace EnhancedConsole.ApplicationTemplate.Infrastructure.Extensions
 
             if (connectionTask.IsFaulted)
             {
-                throw new Exception("Connection failure", connectionTask.Exception);
+                throw new ConnectionTaskFaultedException(connectionTask.Exception);
             }
 
             return Task.FromResult(connection);
