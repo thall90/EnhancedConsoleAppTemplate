@@ -1,10 +1,10 @@
 name: NuGet Publish
 on:
   push:
-   paths-ignore:
-    - 'README.md'
     branches:
-      - master # Default release branch
+    - master # Default release branch
+    paths:
+    - 'README.md'
 jobs:
   publish:
     name: Build, Pack, & Publish
