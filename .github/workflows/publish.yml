@@ -28,7 +28,7 @@ jobs:
           
           PACKAGE_NAME: TH.Utilities.EnhancedConsoleApplication
 
-          VERSION_REGEX: <PackageVersion>(.*)<\/PackageVersion>
+          VERSION_REGEX: <Version>(.*)<\/Version>
 
           TAG_COMMIT: true
 
