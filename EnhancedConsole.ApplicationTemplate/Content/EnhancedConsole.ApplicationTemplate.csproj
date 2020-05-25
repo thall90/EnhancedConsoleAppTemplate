@@ -34,16 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="*.development.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="appsettings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <None Include="app-settings.json" CopyToOutputDirectory="Always" />
   </ItemGroup>
-
-  <Target Name="CopyConnectionStringsIfNotExists" BeforeTargets="Build">
-    <Copy SourceFiles="appsettings.development-default.json" DestinationFiles="appsettings.development.json" Condition="!Exists('appsettings.development.json')" />
-  </Target>
 
 </Project>
