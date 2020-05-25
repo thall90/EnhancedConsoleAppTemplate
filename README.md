@@ -13,7 +13,7 @@ Console application template with appsettings configuration, dependency injectio
 2. Open your terminal of choice and use the following command to download and install the latest version of the template:
 
     ```bash
-    dotnet new --install TH.Utility.EnhancedConsoleApplicationTemplate::1.2.4
+    dotnet new --install TH.Utility.EnhancedConsoleApplicationTemplate::1.2.5
     ```
 
 3. Navigate to a directory where the new console app should be created
