@@ -24,7 +24,7 @@ Console application template with appsettings configuration, dependency injectio
     dotnet new enhancedasyncconsole -n "Your Project Name Here" --title "Your Console Window Title Here"
     ```
     
-## Using this template with the dotnet CLI a local clone of this repository
+## Using this template with the dotnet CLI and a local clone of this repository
 
 1. Make sure that you have [.NET Core 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1) installed
 
